@@ -26,6 +26,28 @@
 
   <!-- Add your site or application content here -->
   <p>Hello world! This is HTML5 Boilerplate.</p>
+  <span id='login'></span>
+  <b>Add paypal login</b>
+  <script src='https://www.paypalobjects.com/js/external/api.js'></script>
+  <script>
+    paypal.use(['login'], function (login) {
+      login.render({
+        "appid": "Ad4B7UzLx-zNRmmbslnEDbsG08XUxmwwB9fanR5YwgwGI4h5UnRyhlypeK8kkuY2yYcuMkwCGARFiul3",
+        "authend": "sandbox",
+        "scopes": "openid profile email address",
+        "containerid": "login",
+        "responseType": "code",
+        "locale": "en-us",
+        "buttonType": "LWP",
+        "buttonShape": "pill",
+        "buttonSize": "lg",
+        "fullPage": "true",
+        "returnurl": "http://127.0.0.1:8080", // https://www.sandbox.paypal.com/conex/ac/add-offer-recipient"
+        // "returnurl": "https://www.sandbox.paypal.com/conex/ac/add-offer-recipient"
+        "redirect_uri": "http://127.0.0.1:8080"
+      });
+    });
+  </script>
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
